@@ -45,3 +45,44 @@
     −1 if unable to allocate a pid (all pids are in use)
     - void release pid(int pid) —> Releases a pid
     
+4. **Collatz conjecture**
+
+    The Collatz conjecture concerns what happens when we take any positive integer n and apply the following algorithm:
+
+    ```
+    n = n∕2, if n is even
+    n = 3 × n + 1, if n is odd
+    ```
+    The conjecture states that when this algorithm is continually applied,
+    all positive integers will eventually reach 1. For example, if n = 35
+    ```
+    n = 35 the sequence is
+    35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1
+    ```
+    Write a C program using the fork() system call that generates this
+        sequence in the child process. The starting number will be provided from the command line. Because the
+    parent and child processes have their own copies of the data, it will be
+    necessary for the child to output the sequence. Have the parent invoke
+    the wait() call to wait for the child process to complete before exiting
+    the program. Perform necessary error checking to ensure that a positive
+    integer is passed on the command line.
+
+5. **Collatz conjecture using shared memory**
+
+    In the previous problem, the child process must output the sequence of numbers generated from the algorithm specified by the Collatz conjecture
+    because the parent and child have their own copies of the data. Another
+    approach to designing this program is to establish a shared-memory
+    object between the parent and child processes. This technique allows
+    the child to write the contents of the sequence to the shared-memory
+    object. The parent can then output the sequence when the child completes. Because the memory is shared, any changes the child makes will
+    be reflected in the parent process as well.
+    This program will be structured using POSIX shared memory. The parent process will progress through the
+    following steps:
+    - Establish the shared-memory object (shm open(), ftruncate(),
+    and mmap()).
+
+    - Create the child process and wait for it to terminate.
+
+    - Output the contents of shared memory.
+
+    - Remove the shared-memory object.
