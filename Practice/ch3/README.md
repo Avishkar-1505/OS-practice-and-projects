@@ -27,5 +27,21 @@
     Elapsed time: 0.25422
     ```
 
+3. **Simulating Operating System’s pid manager**
 
+    Use the following constants to identify the range of possible pid
+    values:
 
+    ```
+    #define MIN PID 300
+    #define MAX PID 5000
+    ``` 
+    You may use any data structure of your choice to represent the availability of process identifiers. One strategy is to adopt what Linux has done and use a bitmap in which a value of 0 at position i indicates that
+    a process id of value i is available and a value of 1 indicates that the process id is currently in use.
+
+    Implement the following API for obtaining and releasing a pid:
+    - int allocate map(void) —> Creates and initializes a data structure for representing pids; returns −1 if unsuccessful, 1 if successful
+    - int allocate pid(void) —> Allocates and returns a pid; returns
+    −1 if unable to allocate a pid (all pids are in use)
+    - void release pid(int pid) —> Releases a pid
+    
