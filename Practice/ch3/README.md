@@ -89,4 +89,9 @@
 
 6. **Socket Program**
 
-    Write simple program using socket connection to create a server that delivers quote of the day when a client connects The quotes should be printable ASCII characters and should contain fewer than 512 characters, although multiple lines are allowed.have your server listen to port 6017.
+    Write simple program using socket connection to create a server that delivers quote of the day when a client connects The quotes should be printable ASCII characters and should contain fewer than 512 characters, although multiple lines are allowed. Have your server listen to port 6017.
+
+7. **Haiku Socket Program**
+
+    Write simple program using socket connection to create a server that delivers a haiku when a client connect. Have your server listen to port 5575.
+
