@@ -95,3 +95,23 @@
 
     Write simple program using socket connection to create a server that delivers a haiku when a client connect. Have your server listen to port 5575.
 
+8. **Echo Server**
+
+    Write an echo server using the Java networking API This server will wait for a client connection using the accept() method. When a client connection is received, the server will loop, performing the following steps:
+    - Read data from the socket into a buffer.
+    - Write the contents of the buffer back to the client.
+
+    The server will break out of the loop only when it has determined that
+    the client has closed the connection.
+
+9. **Reverse Case Using Pipe**
+
+    Design a program using ordinary pipes in which one process sends a string message to a second process, and the second process reverses
+    the case of each character in the message and sends it back to the first
+    process. For example, if the first process sends the message Hi There,
+    the second process will return hI tHERE. This will require using two
+    pipes, one for sending the original message from the first to the second
+    process and the other for sending the modified message from the second
+    to the first process. You can write this program using either UNIX or
+    Windows pipes.
+
